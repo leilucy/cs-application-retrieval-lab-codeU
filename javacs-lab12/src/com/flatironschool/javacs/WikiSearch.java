@@ -38,6 +38,9 @@ public class WikiSearch {
 	 */
 	public Integer getRelevance(String url) {
 		Integer relevance = map.get(url);
+		double itf = 0.0;
+		itf = java.lang.Math.log((double) (map.keySet().size()/map.get(url)));
+		relevance = itf*relevance;
 		return relevance==null ? 0: relevance;
 	}
 
